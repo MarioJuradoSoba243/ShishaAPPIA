@@ -10,8 +10,8 @@ public class TobaccoRequest {
     @NotBlank(message = "El nombre es obligatorio")
     private String name;
 
-    @NotBlank(message = "La marca es obligatoria")
-    private String brand;
+    @NotBlank(message = "El sabor es obligatorio")
+    private String flavor;
 
     public String getName() {
         return name;
@@ -21,11 +21,11 @@ public class TobaccoRequest {
         this.name = name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getFlavor() {
+        return flavor;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 }

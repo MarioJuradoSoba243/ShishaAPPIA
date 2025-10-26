@@ -17,8 +17,8 @@
           <input id="name" v-model="form.name" type="text" placeholder="Ej. Blue Mist" />
         </div>
         <div class="form__row">
-          <label for="brand">Marca</label>
-          <input id="brand" v-model="form.brand" type="text" placeholder="Ej. Starbuzz" />
+          <label for="flavor">Sabor</label>
+          <input id="flavor" v-model="form.flavor" type="text" placeholder="Ej. Kiwi helado" />
         </div>
         <p v-if="localError" class="form__error">{{ localError }}</p>
         <p v-else-if="saveError" class="form__error">{{ saveError }}</p>
@@ -33,7 +33,7 @@
         <li v-if="tobaccos.length === 0" class="list__empty">Aún no hay tabacos registrados.</li>
         <li v-for="tobacco in tobaccos" :key="tobacco.id" class="list__item">
           <span class="list__name">{{ tobacco.name }}</span>
-          <span class="list__brand">{{ tobacco.brand }}</span>
+          <span class="list__flavor">{{ tobacco.flavor }}</span>
         </li>
       </ul>
     </section>
@@ -52,7 +52,7 @@ const showForm = ref(false)
 const localError = ref(null)
 const form = reactive({
   name: '',
-  brand: ''
+  flavor: ''
 })
 
 onMounted(async () => {
@@ -70,7 +70,7 @@ function toggleForm () {
 
 async function submitForm () {
   localError.value = null
-  if (!form.name.trim() || !form.brand.trim()) {
+  if (!form.name.trim() || !form.flavor.trim()) {
     localError.value = 'Completa todos los campos antes de guardar.'
     return
   }
@@ -78,7 +78,7 @@ async function submitForm () {
   try {
     await tobaccoStore.create({
       name: form.name.trim(),
-      brand: form.brand.trim()
+      flavor: form.flavor.trim()
     })
     resetForm()
     showForm.value = false
@@ -89,7 +89,7 @@ async function submitForm () {
 
 function resetForm () {
   form.name = ''
-  form.brand = ''
+  form.flavor = ''
   localError.value = null
 }
 </script>
@@ -218,7 +218,7 @@ function resetForm () {
   color: #1e293b;
 }
 
-.list__brand {
+.list__flavor {
   color: #475569;
 }
 </style>

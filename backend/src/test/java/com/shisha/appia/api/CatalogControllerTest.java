@@ -38,7 +38,7 @@ class CatalogControllerTest {
     void shouldCreateAndListTobaccos() throws Exception {
         TobaccoRequest request = new TobaccoRequest();
         request.setName("Blue Mist");
-        request.setBrand("Starbuzz");
+        request.setFlavor("Starbuzz");
 
         mockMvc.perform(post("/api/tobaccos")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -50,7 +50,9 @@ class CatalogControllerTest {
                 .andReturn();
 
         String responseContent = result.getResponse().getContentAsString();
-        assertThat(responseContent).contains("Blue Mist", "Starbuzz");
+        assertThat(responseContent)
+                .contains("\"name\":\"Blue Mist\"")
+                .contains("\"flavor\":\"Starbuzz\"");
     }
 
     @Test
@@ -91,10 +93,10 @@ class CatalogControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    private Long createTobacco(String name, String brand) throws Exception {
+    private Long createTobacco(String name, String flavor) throws Exception {
         TobaccoRequest request = new TobaccoRequest();
         request.setName(name);
-        request.setBrand(brand);
+        request.setFlavor(flavor);
 
         MvcResult result = mockMvc.perform(post("/api/tobaccos")
                         .contentType(MediaType.APPLICATION_JSON)

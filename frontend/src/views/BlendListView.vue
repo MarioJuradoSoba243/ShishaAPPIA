@@ -24,7 +24,7 @@
           <label for="blend-tobaccos">Tabacos incluidos</label>
           <select id="blend-tobaccos" v-model="form.tobaccoIds" multiple>
             <option v-for="tobacco in tobaccos" :key="tobacco.id" :value="tobacco.id">
-              {{ tobacco.name }} ({{ tobacco.brand }})
+              {{ tobacco.name }} ({{ tobacco.flavor }})
             </option>
           </select>
           <small class="form__hint">Mantén pulsado Ctrl o Cmd para seleccionar varios tabacos.</small>

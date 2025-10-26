@@ -74,7 +74,7 @@ public class BlendService {
     private BlendResponse toResponse(Blend blend) {
         List<TobaccoResponse> tobaccos = blend.getTobaccos()
                 .stream()
-                .map(tobacco -> new TobaccoResponse(tobacco.getId(), tobacco.getName(), tobacco.getBrand()))
+                .map(tobacco -> new TobaccoResponse(tobacco.getId(), tobacco.getName(), tobacco.getFlavor()))
                 .collect(Collectors.toList());
         return new BlendResponse(blend.getId(), blend.getName(), blend.getDescription(), tobaccos);
     }
