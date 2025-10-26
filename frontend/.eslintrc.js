@@ -8,9 +8,11 @@ module.exports = {
     '@vue/standard'
   ],
   parserOptions: {
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false
   },
   rules: {
     'vue/multi-word-component-names': 'off'
   }
-};
+}
