@@ -42,12 +42,12 @@ public class TobaccoService {
      */
     @Transactional
     public TobaccoResponse create(TobaccoRequest request) {
-        Tobacco entity = new Tobacco(request.getName(), request.getBrand());
+        Tobacco entity = new Tobacco(request.getName(), request.getFlavor());
         Tobacco saved = tobaccoRepository.save(entity);
         return toResponse(saved);
     }
 
     private TobaccoResponse toResponse(Tobacco tobacco) {
-        return new TobaccoResponse(tobacco.getId(), tobacco.getName(), tobacco.getBrand());
+        return new TobaccoResponse(tobacco.getId(), tobacco.getName(), tobacco.getFlavor());
     }
 }

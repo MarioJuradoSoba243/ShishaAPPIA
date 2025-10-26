@@ -5,7 +5,7 @@ package com.shisha.appia.api.dto;
  *
  * @param id    database identifier
  * @param name  tobacco name
- * @param brand tobacco brand
+ * @param flavor tobacco flavor description
  */
-public record TobaccoResponse(Long id, String name, String brand) {
+public record TobaccoResponse(Long id, String name, String flavor) {
 }

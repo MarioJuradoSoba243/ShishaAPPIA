@@ -23,15 +23,15 @@ public class Tobacco {
     private String name;
 
     @Column(nullable = false)
-    private String brand;
+    private String flavor;
 
     public Tobacco() {
         // Default constructor required by JPA
     }
 
-    public Tobacco(String name, String brand) {
+    public Tobacco(String name, String flavor) {
         this.name = name;
-        this.brand = brand;
+        this.flavor = flavor;
     }
 
     public Long getId() {
@@ -46,12 +46,12 @@ public class Tobacco {
         this.name = name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getFlavor() {
+        return flavor;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 
     @Override
