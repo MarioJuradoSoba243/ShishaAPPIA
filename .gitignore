@@ -1,0 +1,27 @@
+# Maven
+**/target/
+.mvn/
+.mvnd/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# SQLite database
+backend/database/app.db
