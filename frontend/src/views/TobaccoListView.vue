@@ -6,9 +6,12 @@
           <h1 class="panel__title">Tabacos</h1>
           <p class="panel__subtitle">Gestiona las variedades disponibles en tu almacén.</p>
         </div>
-        <button class="primary" type="button" @click="toggleForm">
-          {{ showForm ? 'Cancelar' : 'Añadir tabaco' }}
-        </button>
+        <div class="panel__actions">
+          <RouterLink class="secondary" to="/">Volver al menú</RouterLink>
+          <button class="primary" type="button" @click="toggleForm">
+            {{ showForm ? 'Cancelar' : 'Añadir tabaco' }}
+          </button>
+        </div>
       </header>
 
       <form v-if="showForm" class="form" @submit.prevent="submitForm">
@@ -111,6 +114,13 @@ function resetForm () {
   margin-bottom: 1.5rem;
 }
 
+.panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .panel__title {
   margin: 0;
   font-size: 2rem;
@@ -141,6 +151,27 @@ function resetForm () {
 .primary:hover:not(:disabled) {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(99, 102, 241, 0.35);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid #cbd5f5;
+  color: #1e293b;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.secondary:hover {
+  background: #e0e7ff;
+  color: #312e81;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.18);
 }
 
 .form {

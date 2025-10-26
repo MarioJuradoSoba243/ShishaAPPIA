@@ -6,9 +6,12 @@
           <h1 class="panel__title">Mezclas</h1>
           <p class="panel__subtitle">Combina tabacos para crear perfiles de sabor únicos.</p>
         </div>
-        <button class="primary" type="button" @click="toggleForm">
-          {{ showForm ? 'Cancelar' : 'Crear mezcla' }}
-        </button>
+        <div class="panel__actions">
+          <RouterLink class="secondary" to="/">Volver al menú</RouterLink>
+          <button class="primary" type="button" @click="toggleForm">
+            {{ showForm ? 'Cancelar' : 'Crear mezcla' }}
+          </button>
+        </div>
       </header>
 
       <form v-if="showForm" class="form" @submit.prevent="submitForm">
@@ -141,6 +144,13 @@ function resetForm () {
   margin-bottom: 1.5rem;
 }
 
+.panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .panel__title {
   margin: 0;
   font-size: 2rem;
@@ -171,6 +181,27 @@ function resetForm () {
 .primary:hover:not(:disabled) {
   transform: translateY(-3px);
   box-shadow: 0 12px 25px rgba(244, 63, 94, 0.35);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid #fb923c;
+  color: #c2410c;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.secondary:hover {
+  background: rgba(249, 115, 22, 0.12);
+  color: #9a3412;
+  box-shadow: 0 10px 20px rgba(244, 114, 182, 0.15);
 }
 
 .form {
