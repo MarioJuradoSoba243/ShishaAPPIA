@@ -2,7 +2,7 @@
   <div id="app">
     <header class="app-header">
       <h1>Shisha APPIA</h1>
-      <p>Stack inicializado: Spring Boot + Vue.js + SQLite</p>
+      <p>Gestiona tu catálogo de tabacos y mezclas con Spring Boot, Vue.js y SQLite.</p>
     </header>
     <router-view />
   </div>

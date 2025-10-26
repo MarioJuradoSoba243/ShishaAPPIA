@@ -1,18 +1,18 @@
-package com.shisha.appia.backend;
+package com.shisha.appia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Entry point for the Shisha APPIA Spring Boot application.
+ * Entry point for the Shisha APPIA backend application.
  */
 @SpringBootApplication
 public class ShishaAppiaApplication {
 
     /**
-     * Launches the Spring Boot backend.
+     * Bootstraps the Spring Boot context.
      *
-     * @param args application arguments
+     * @param args command line arguments
      */
     public static void main(String[] args) {
         SpringApplication.run(ShishaAppiaApplication.class, args);
