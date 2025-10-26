@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import UserListView from '../views/UserListView.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import UserListView from '../views/UserListView.vue'
 
 const routes = [
   {
@@ -7,11 +7,11 @@ const routes = [
     name: 'users',
     component: UserListView
   }
-];
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes
-});
+})
 
-export default router;
+export default router

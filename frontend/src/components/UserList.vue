@@ -14,32 +14,32 @@
 </template>
 
 <script>
-import { mapStores } from 'pinia';
-import { useUserStore } from '../stores/userStore';
+import { mapStores } from 'pinia'
+import { useUserStore } from '../stores/userStore'
 
 export default {
   name: 'UserList',
   computed: {
     ...mapStores(useUserStore),
-    users() {
-      return this.userStore.users;
+    users () {
+      return this.userStore.users
     },
-    loading() {
-      return this.userStore.loading;
+    loading () {
+      return this.userStore.loading
     },
-    error() {
-      return this.userStore.error;
+    error () {
+      return this.userStore.error
     }
   },
-  created() {
-    this.loadUsers();
+  created () {
+    this.loadUsers()
   },
   methods: {
-    async loadUsers() {
-      await this.userStore.fetchUsers();
+    async loadUsers () {
+      await this.userStore.fetchUsers()
     }
   }
-};
+}
 </script>
 
 <style scoped>
